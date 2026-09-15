@@ -1,20 +1,15 @@
 package ru.yandex.practicum.gym;
 
-import java.time.LocalTime;
 import java.util.*;
 
 public class Timetable {
-    private Map<DayOfWeek, Map<TimeOfDay, List<TrainingSession>>> timetable;
+    private final Map<DayOfWeek, Map<TimeOfDay, List<TrainingSession>>> timetable;
 
     public Timetable() {
         this.timetable = new HashMap<>();
         for (DayOfWeek day : DayOfWeek.values()) {
             this.timetable.put(day, new TreeMap<>());
         }
-    }
-
-    public Timetable(Map<DayOfWeek, Map<TimeOfDay, List<TrainingSession>>> timetable) {
-        this.timetable = timetable;
     }
 
     public void addNewTrainingSession(TrainingSession trainingSession) {
